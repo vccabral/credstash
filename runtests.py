@@ -49,19 +49,19 @@ class TestExpandingWildcard(unittest.TestCase):
 class TestPadLeft(unittest.TestCase):
     def test_zero(self):
         i = 0
-        self.assertEqual(paddedInt(i), "0"*19)
+        self.assertEqual(paddedInt(i), "0000000000000000000")
 
     def test_ten(self):
         i = 10
-        self.assertEqual(paddedInt(i), str(i).zfill(19))
+        self.assertEqual(paddedInt(i), "0000000000000000010")
 
     def test_arbitrary_number(self):
         i = 98218329123
-        self.assertEqual(paddedInt(i), str(i).zfill(19))
+        self.assertEqual(paddedInt(i), "0000000098218329123")
 
     def test_huge_number(self):
         i = 12345678901234567890123
-        self.assertEqual(paddedInt(i), str(i).zfill(19))
+        self.assertEqual(paddedInt(i), "12345678901234567890123")
 
 
 if __name__ == '__main__':
